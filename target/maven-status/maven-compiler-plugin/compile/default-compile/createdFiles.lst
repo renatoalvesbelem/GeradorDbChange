@@ -1,0 +1,6 @@
+br/com/control/DbChangeControl.class
+br/com/br/com/model/DbChangeModel.class
+br/com/control/DbchangeXML.class
+br/com/view/Principal.class
+br/com/br/com/model/ScriptLineModel.class
+br/com/ParametrosDbChange.class

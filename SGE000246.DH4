@@ -1,0 +1,37 @@
+--  Script de atualizacao do sistema SAJ
+--  Todos os direitos reservados a Softplan Planejamento e Sistemas Ltda
+--
+--
+--  Script Numero  : SGE000246.DH4
+--  Banco Alvo     : SQLSERVER
+--  Data de Criacao: 12/12/2017 15:11:02
+--
+--
+--  Sistema        : SGE
+--  Clientes       : TJ/AL
+--  Autor          : vinicius.oliveira
+--
+--  Objetivo: Agrupamento para considerar somente movimentações que descendem do código 193 TJAL 
+--  Nº SALT: 261294-1
+--
+-- Pré-requisitos: 
+--
+
+insert into efsgItemAgrupa (cdTipoAgrupa, cdItemAgrupa, deItemAgrupa, nuOrdem, flTipoAgrupa)
+values (99, 52, 'Movimentações de julgamento consideradas para o Gerencial do Gabinete', 52,'M');
+GO
+
+insert into efsgAgrupaMov (cdTipoAgrupa, cdItemAgrupa, cdTipoMvProcesso, flArea)
+with mov as (
+ select cdTipoMvProcesso, cdSituacaoProcesso from efpgTipoMvProcesso 
+ start with cdTipoMvExtPai in (193)
+ connect by prior cdTipoMvExt= cdTipoMvExtPai
+union all 
+ select cdTipoMvProcesso, cdSituacaoProcesso from efpgTipoMvProcesso 
+ where cdTipoMvExt in (193)
+)
+select 99, 52, cdTipoMvProcesso, '3' from mov where cdSituacaoProcesso = 'J'; 
+GO
+
+INSERT INTO SAJ.EPADSCRIPTRODADO (NMSCRIPT, DESCRIPT, DTEXECUCAO) values ('SGE000246.DH4', 'Agrupamento para considerar somente movimentações que descendem do código 193 TJAL', getdate());
+GO

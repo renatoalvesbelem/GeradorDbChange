@@ -1,0 +1,10 @@
+
+05/01/2018 03:35:09.853         ANALISING_SCRIPTS       SGETINT        saj CaproniCA3.exe - Versao 1.1.22
+05/01/2018 03:35:09.854         ANALISING_SCRIPTS       SGETINT        saj Carregando o arquivo C:\CaproniCa3\bin\INPUT\SGE\SGE000246.DH4
+05/01/2018 03:35:09.861         ANALISING_SCRIPTS       SGETINT        saj Validando C:\CaproniCa3\bin\INPUT\SGE\SGE000246.DH4
+05/01/2018 03:35:09.881         ANALISING_SCRIPTS       SGETINT        saj O script SGE000246.DH4 nao foi rodado, pois deve ser rodado somente nos clientes: [TJ/AL] 
+
+05/01/2018 03:36:58.035        RUNNING_DB_SCRIPTS       SGETINT        saj CaproniCA3.exe - Versao 1.1.22
+05/01/2018 03:36:58.087        RUNNING_DB_SCRIPTS       SGETINT        saj Carregando o arquivo C:\CaproniCa3\bin\INPUT\SGE\SGE000246.DH4
+05/01/2018 03:36:58.092        RUNNING_DB_SCRIPTS       SGETINT        saj Executando C:\CaproniCa3\bin\INPUT\SGE\SGE000246.DH4
+05/01/2018 03:36:58.111        RUNNING_DB_SCRIPTS       SGETINT        saj O script SGE000246.DH4 nao foi rodado, pois deve ser rodado somente nos clientes: [TJ/AL] 

@@ -1,0 +1,29 @@
+--  Script de atualizacao do sistema SAJ
+--  Todos os direitos reservados a Softplan Planejamento e Sistemas Ltda
+--
+--
+--  Script Numero  : SGE000245.DH4
+--  Banco Alvo     : SQLSERVER
+--  Data de Criacao: 12/12/2017 14:54:12
+--
+--
+--  Sistema        : SGE
+--  Clientes        : TJ/SC, TJ/SP, TJ/CE, TJ/AC, TJ/AM, TJ/SC
+--  Autor          : vinicius.oliveira
+--
+--  Objetivo: Agrupamento para considerar como julgamento as movimentações que descendem do código 193 
+--  Nº SALT: 261294-1
+--
+-- Pré-requisitos: 
+--
+
+insert into efsgItemAgrupa (cdTipoAgrupa, cdItemAgrupa, deItemAgrupa, nuOrdem, flTipoAgrupa)
+values (99, 52, 'Movimentações de julgamento consideradas para o Gerencial do Gabinete', 52,'M');
+GO
+
+insert into efsgAgrupaMov (cdTipoAgrupa, cdItemAgrupa, cdTipoMvProcesso, flArea)
+select 99, 52, cdTipoMvProcesso, '3' from efpgTipoMvProcesso where cdSituacaoProcesso = 'J';  
+GO
+
+INSERT INTO SAJ.EPADSCRIPTRODADO (NMSCRIPT, DESCRIPT, DTEXECUCAO) values ('SGE000245.DH4', 'Agrupamento para considerar como julgamento as movimentações que descendem do código 193', getdate());
+GO
