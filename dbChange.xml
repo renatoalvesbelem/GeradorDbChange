@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <havillan>
-	<script a_name="SGE000245.DH4"/>
-	<script a_name="SGE000246.DH4"/>
+	<script a_name="SGE000245.DH4" z_description="Agrupamento para considerar como julgamento as movimenta��es que descendem do c�digo 193"/>
+	<script a_name="SGE000246.DH4" z_description="Agrupamento para considerar somente movimenta��es que descendem do c�digo 193 TJAL"/>
 </havillan>
